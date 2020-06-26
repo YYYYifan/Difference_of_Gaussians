@@ -10,14 +10,14 @@ import PIL
 
 
 class DOG():
-    def __init__(self, radius=5, sigema=1.6):
+    def __init__(self, radius=5, sigma=1.6):
         self.radius=radius
-        self.sigema=sigema   
+        self.sigma=sigma   
         self.pi = 3.141593
         
     def gaussian(self,x,y):
-        res1=1/(2*self.pi*self.sigema*self.sigema)
-        res2=np.exp(-(x*x+y*y)/(2*self.sigema*self.sigema))
+        res1=1/(2 * self.pi * self.sigma * self.sigma)
+        res2=np.exp(-(x*x+y*y)/(2*self.sigma*self.sigma))
         return res1*res2
     
     def template(self):
@@ -57,9 +57,9 @@ class DOG():
         return DOG_result
 
 '''        
-layer3=DOG(radius=5, sigema=4.8)#声明高斯模糊类
+layer3=DOG(radius=5, sigma=4.8)#声明高斯模糊类
 temp1=layer3.template()
-layer4=DOG(radius=5, sigema=6.4) 
+layer4=DOG(radius=5, sigma=6.4) 
 temp2=layer4.template()
 
 im=PIL.Image.open("C:\\Users\\duyif\\OneDrive\\Birmingham\\GraduationProject\\code\\Surf\\BMW_1.png")#打开图片
