@@ -55,15 +55,15 @@ class DOG():
         DOG_result[2, :, :] = np.asarray(image3) - np.asarray(image4)
         return DOG_result
 '''        
-layer3=MyGaussianBlur(radius=5, sigema=4.8)#声明高斯模糊类
+layer3=DOG(radius=5, sigema=4.8)#声明高斯模糊类
 temp1=layer3.template()
-layer4=MyGaussianBlur(radius=5, sigema=6.4)#声明高斯模糊类    
+layer4=DOG(radius=5, sigema=6.4) 
 temp2=layer4.template()
 
 im=PIL.Image.open("C:\\Users\\duyif\\OneDrive\\Birmingham\\GraduationProject\\code\\Surf\\BMW_1.png")#打开图片
 im = im.convert("L")
 image3=layer3.filter(im, temp1)#高斯模糊滤波，得到新的图片
-image4=layer4.filter(im, temp2)#高斯模糊滤波，得到新的图片
+image4=layer4.filter(im, temp2)
 
 image5 = np.asarray(image3) - np.asarray(image4)
 PIL.Image.fromarray(np.uint8(image5)).show()
