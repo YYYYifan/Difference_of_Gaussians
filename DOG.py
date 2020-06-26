@@ -53,7 +53,9 @@ class DOG():
         DOG_result[0, :, :] = np.asarray(image) - np.asarray(image2)
         DOG_result[1, :, :] = np.asarray(image2) - np.asarray(image3)
         DOG_result[2, :, :] = np.asarray(image3) - np.asarray(image4)
+
         return DOG_result
+
 '''        
 layer3=DOG(radius=5, sigema=4.8)#声明高斯模糊类
 temp1=layer3.template()
@@ -68,6 +70,8 @@ image4=layer4.filter(im, temp2)
 image5 = np.asarray(image3) - np.asarray(image4)
 PIL.Image.fromarray(np.uint8(image5)).show()
 '''
+
+
 test = DOG()
 im=PIL.Image.open("C:\\Users\\duyif\\OneDrive\\Birmingham\\GraduationProject\\code\\Surf\\BMW_1.png")#打开图片
 im = im.convert("L")
