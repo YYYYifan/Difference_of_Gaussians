@@ -71,12 +71,12 @@ image5 = np.asarray(image3) - np.asarray(image4)
 PIL.Image.fromarray(np.uint8(image5)).show()
 '''
 
+if __name__ == "__main__":
+    test = DOG()
+    im=PIL.Image.open("C:\\Users\\duyif\\OneDrive\\Birmingham\\GraduationProject\\code\\Surf\\BMW_1.png")#打开图片
+    im = im.convert("L")
 
-test = DOG()
-im=PIL.Image.open("C:\\Users\\duyif\\OneDrive\\Birmingham\\GraduationProject\\code\\Surf\\BMW_1.png")#打开图片
-im = im.convert("L")
-
-t1 = test.diff(im)
-PIL.Image.fromarray(np.uint8(t1[0, :, :])).show()
-PIL.Image.fromarray(np.uint8(t1[1, :, :])).show()
-PIL.Image.fromarray(np.uint8(t1[2, :, :])).show()
+    t1 = test.diff(im)
+    PIL.Image.fromarray(np.uint8(t1[0, :, :])).show()
+    PIL.Image.fromarray(np.uint8(t1[1, :, :])).show()
+    PIL.Image.fromarray(np.uint8(t1[2, :, :])).show()
